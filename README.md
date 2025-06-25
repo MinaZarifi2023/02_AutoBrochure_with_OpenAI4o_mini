@@ -1,67 +1,47 @@
-# 🧠 Brochure Generator Using LLMs
-his project automates the creation of professional company brochures by analyzing live content from a company's website using LLMs like OpenAI's `gpt-4o-mini` and Ollama's `llama3.2`.
+# Brochure Generator Using LLMs
 
-✅ Key Features:
-1. Web Scraping: Uses BeautifulSoup to extract clean, readable text (excluding code, images, scripts, etc.) and outbound links from the landing page and subpages.
+This project automates the creation of company brochures by analyzing live content from a company's website using language models such as OpenAI’s `gpt-4o-mini` and Ollama’s `llama3.2`.
 
-2. Smart Link Filtering: Uses a language model (GPT-4o-mini via OpenAI or LLaMA 3.2 via Ollama) to select the most relevant subpages (like "About", "Careers", etc.) to include in the brochure.
+## Features
 
-3. Content Compilation: Gathers all relevant content into a single prompt input for brochure generation.
+- **Web Scraping**: Extracts clean, readable text and outbound links from the landing page and subpages using BeautifulSoup.
+- **Link Filtering**: Uses a language model to identify relevant subpages (e.g., "About", "Careers") for brochure content.
+- **Content Aggregation**: Compiles selected content into a single input prompt.
+- **Brochure Generation**: Sends compiled data to an LLM, which returns a structured brochure in Markdown format.
+- **Streaming Output (optional)**: Provides live output in a typewriter-style display.
 
-4. Brochure Generation: Sends the collected data to an LLM, which generates a well-structured brochure in Markdown format.
+Supports both OpenAI and Ollama-based pipelines.
 
-5. Streaming Output (Optional): Includes optional live streaming of the output in a typewriter-style animation for better UX.
+## Use Cases
 
-Supports both OpenAI and LLaMA pipelines for flexibility.
-
----
-
-## 🚀 Use Case
-Generate high-quality brochures for:
+Generate brochures for:
 - Customers
 - Investors
 - Job candidates
 
-Ideal for marketing, HR, and business development teams.
+Useful for marketing, HR, and business development.
 
----
-
-## 🛠 Features
-
-- 🌐 **Website Scraping**: Extracts the company’s landing page text and key subpages.
-- 🔗 **Link Relevance Detection**: Uses LLMs to identify pages like "About", "Careers", or "Company".
-- 🧠 **LLM Integration**:
-  - OpenAI (`gpt-4o-mini`)
-  - Ollama (`llama3.2`)
-- 📄 **Markdown Output**: Generates clear, readable brochures.
-- 🖥 **Streaming Output**: (Optional) Live display for user-friendly interaction.
-
----
-
-## 📦 Dependencies
+## Installation
 
 ```bash
 pip install requests beautifulsoup4 openai python-dotenv
 ```
 
-You also need:
+## Requirements
 
-- An OpenAI API Key (.env file with OPENAI_API_KEY)
+- OpenAI API key (`.env` file with `OPENAI_API_KEY`)
+- Ollama installed and running locally (for `llama3.2`)
 
-- Ollama installed and running locally (for LLaMA 3.2)
+## Usage
 
----
-
-# ⚙️ Usage
-
-## 📌 Using OpenAI:
-```bash
+### Using OpenAI
+```python
 create_brochure("HuggingFace", "https://huggingface.co")
 ```
 
 ---
 
-## 📌 Using  LLaMA 3.2:
+## Using  LLaMA 3.2:
 ```bash
 ollama run llama3.2
 create_brochure("HuggingFace", "https://huggingface.co")
@@ -69,26 +49,26 @@ create_brochure("HuggingFace", "https://huggingface.co")
 
 ---
 
-## 🖋 Streamed Output
+## With Streaming Output
 ```bash
 stream_brochure("HuggingFace", "https://huggingface.co")
 ```
 
 ---
 
-## 🧪 Example Output
+## Example Output
 ```bash
 # HuggingFace Brochure
 
 Welcome to HuggingFace — a leading AI company...
 
-- 🤝 Partnerships with top research labs
-- 💼 Careers focused on open-source innovation
-- 🌍 Global community of developers
+-  Partnerships with top research labs
+-  Careers focused on open-source innovation
+-  Global community of developers
 ```
 
 ---
-## 🧠 Prompts & Customization
+## Prompts & Customization
 You can easily change the tone (formal, fun, casual) by modifying the system_prompt in the code.
 
 
